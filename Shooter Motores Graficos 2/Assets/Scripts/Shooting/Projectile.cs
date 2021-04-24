@@ -2,6 +2,7 @@
 
 public class Projectile : MonoBehaviour
 {
+    //limites de distancia que recorre el proyectil para que se destruya
     public float xLimit = 30;
     public float yLimit = 20;
 
@@ -9,7 +10,7 @@ public class Projectile : MonoBehaviour
     {
         Restart._Restart.OnRestart += Reset;
     }
-
+    //cuando se recetea el juego se destruyen todas las balas
     private void Reset()
     {
         Destroy(this.gameObject);
@@ -17,6 +18,7 @@ public class Projectile : MonoBehaviour
 
     virtual public void Update()
     {
+        //activa el check limits
         CheckLimits();
     }
 
@@ -27,7 +29,7 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+    //se encarga de que los proyectiles se destruyan si superan los limites de distancia establecidos
     internal virtual void CheckLimits()
     {
         if (this.transform.position.x > xLimit)
