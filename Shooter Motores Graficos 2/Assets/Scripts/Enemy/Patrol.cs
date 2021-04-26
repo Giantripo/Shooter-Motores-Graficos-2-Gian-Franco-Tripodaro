@@ -13,6 +13,7 @@ public class Patrol : Controller_Enemy
         {
             var heading = player.transform.position - this.transform.position;
             var distance = heading.magnitude;
+            //si distancia es menor a patrol distance, la cual vale 5, el agente setea su destino en la posicion a la que cambia el player 
             if (distance < patrolDistance)
             {
                 agent.SetDestination(player.transform.position);
