@@ -119,14 +119,26 @@ public class Controller_Player : MonoBehaviour
             //destruye el power up
             Destroy(collision.gameObject);
         }
-        // si el player colisiona con el bumeran, se recarga la municion de bumeran en 1 y lo destruye
-        if (collision.gameObject.CompareTag("Bumeran"))
+        
+        //if (collision.gameObject.CompareTag("Bumeran"))
+        //{
+        //    Controller_Shooting.ammo = Ammo.Bumeran;
+        //    Controller_Shooting.ammunition = 1;
+        //    Destroy(collision.gameObject);
+        //}
+    }
+    // si el player colisiona con el bumeran, se recarga la municion de bumeran en 1 y lo destruye (ahora no empuja al player)
+    private void OnTriggerEnter(Collider other)
+    {
+       if (other.CompareTag("Bumeran"))
         {
             Controller_Shooting.ammo = Ammo.Bumeran;
             Controller_Shooting.ammunition = 1;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
+    
+
 
     void OnDisable()
     {

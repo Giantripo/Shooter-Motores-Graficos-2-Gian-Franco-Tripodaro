@@ -9,6 +9,7 @@ public class Controller_Hud : MonoBehaviour
     public Text gameOverText;
     public Text pointsText;
     public Text powerUpText;
+   
 
     void Start()
     {

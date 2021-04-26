@@ -245,8 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowFactor: 0.05
   slowLength: 2
-  isTrue: 0
+  slowActive: 0
   cont: 0
+  cont2: 0
 --- !u!4 &87538237
 Transform:
   m_ObjectHideFlags: 0

@@ -87,6 +87,7 @@ public class Controller_Bumeran : MonoBehaviour
     //le añade una direccion y velocidad al rigid body para que vuelva en la direccion en la que fue lanzado
     private void ReturnToPlayer()
     {
+        collider.isTrigger = true;
         rb.AddForce(direction * bumeranSpeed);
     }
 
