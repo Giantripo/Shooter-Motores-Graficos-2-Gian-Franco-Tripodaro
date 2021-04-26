@@ -21,6 +21,7 @@ public class Controller_Enemy : MonoBehaviour
         Restart._Restart.OnRestart += Reset;
         destination = new Vector3(UnityEngine.Random.Range(-10, 12), 1, UnityEngine.Random.Range(-12, 9));
         agent = GetComponent<NavMeshAgent>();
+        //busca al Player
         player = GameObject.Find("Player");
     }
 
@@ -31,17 +32,20 @@ public class Controller_Enemy : MonoBehaviour
 
     internal virtual void OnCollisionEnter(Collision collision)
     {
+        //si toca un projectile, destruye ambos gameobject y aumenta 1 punto 
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             Controller_Hud.points++;
         }
+        //si toca un cannonball, destruye solo al enemy y aumenta 1 punto 
         if (collision.gameObject.CompareTag("CannonBall"))
         {
             Destroy(this.gameObject);
             Controller_Hud.points++;
         }
+        //si toca un cannonball, destruye solo al enemy y aumenta 1 punto 
         if (collision.gameObject.CompareTag("Bumeran"))
         {
             Destroy(this.gameObject);

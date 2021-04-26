@@ -12,7 +12,7 @@ public class Controller_Bumeran : MonoBehaviour
     private float travelDistance;
     private float colliderTimer = 0.07f;
     private bool going;
-    public int aber;
+
 
     void Start()
     {

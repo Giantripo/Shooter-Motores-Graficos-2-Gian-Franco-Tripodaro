@@ -11,8 +11,8 @@ public class Controller_Player : MonoBehaviour
     internal Vector3 shootAngle;
     private Vector3 startPos;
     private bool started = false;
-    public float speed = 5;
-
+    public static float speed = 5;
+    public TimeController timeController;
     private void Start()
     {
         //si el juego compienza sin player, es decir, se destruyo tras perder y tocar la R, lo que hace es que lo regenera en la posicion determinada y reinicia su disparo
@@ -41,6 +41,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Update()
     {
+       
         //instancia el movimeinto en x y z
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
@@ -50,7 +51,7 @@ public class Controller_Player : MonoBehaviour
 
     public virtual void FixedUpdate()
     {
-        //ejecuta en bucle movement 
+        //ejecuta movement 
         Movement();
     }
 
@@ -67,6 +68,7 @@ public class Controller_Player : MonoBehaviour
      //retorna el ultimo angulo al que se movio al personaje
     public Vector3 GetLastAngle()
     {
+        
         if (Input.GetKey(KeyCode.W))
         {
             shootAngle = Vector3.forward;
