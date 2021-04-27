@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class Controller_Enemy : MonoBehaviour
 {
+    
+    public float expForce =50 , radius=20;
     public static int numPatroler;
     internal GameObject player;
     internal NavMeshAgent agent;
@@ -51,9 +53,33 @@ public class Controller_Enemy : MonoBehaviour
             Destroy(this.gameObject);
             Controller_Hud.points++;
         }
+        if (collision.gameObject.CompareTag("Bomb"))
+        {
+           
+            Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+
+            foreach (Collider nearby in colliders)
+            {
+                Rigidbody rigg = nearby.GetComponent<Rigidbody>();
+                if (rigg != null)
+                {
+                    rigg.AddExplosionForce(expForce, transform.position, radius);
+                }
+            }
+
+            Destroy(collision.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ray"))
+        {
+            Destroy(this.gameObject);
+            Controller_Hud.points++;
+        }
     }
 
-    private void OnDestroy()
+        private void OnDestroy()
     {
         Instantiator.enemies.Remove(this);
     }

@@ -12,7 +12,9 @@ public class Controller_Player : MonoBehaviour
     private Vector3 startPos;
     private bool started = false;
     public static float speed = 5;
+    
     public TimeController timeController;
+    
     private void Start()
     {
         //si el juego compienza sin player, es decir, se destruyo tras perder y tocar la R, lo que hace es que lo regenera en la posicion determinada y reinicia su disparo
@@ -47,12 +49,26 @@ public class Controller_Player : MonoBehaviour
         movement.z = Input.GetAxis("Vertical");
         //hace que el player siga el mouse con la mirada. transforma la posiscion del mouse en una coordenada en el escenario
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            Controller_Shooting.ammo = Ammo.Bomb;
+          
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            
+            Controller_Shooting.ammo = Ammo.ray;
+           
+        }
+
     }
 
     public virtual void FixedUpdate()
     {
         //ejecuta movement 
         Movement();
+
+
     }
 
      
@@ -87,7 +103,7 @@ public class Controller_Player : MonoBehaviour
         }
         return shootAngle;
     }
-
+    
     public virtual void OnCollisionEnter(Collision collision)
     {
         //si el jugador colisiona contra un enemy o enemy proyectile, se activa el texto de gameover y el player se desactiva
@@ -97,6 +113,8 @@ public class Controller_Player : MonoBehaviour
             Controller_Hud.gameOver = true;
         }
         //si el player colisiona contra un power up, se genera un numero aleatorio entre 1 y 3 que se carga en la variable rnd
+
+
         if (collision.gameObject.CompareTag("PowerUp"))
         {
             int rnd = UnityEngine.Random.Range(1, 3);

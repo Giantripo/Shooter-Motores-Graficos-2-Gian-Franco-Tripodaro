@@ -2,6 +2,7 @@
 
 public class Controller_Shooting : MonoBehaviour
 {
+    
     public delegate void Shooting();
     public event Shooting OnShooting;
     public static Ammo ammo;
@@ -10,9 +11,15 @@ public class Controller_Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject cannonPrefab;
+    public GameObject pBomb;
     public GameObject bumeranPrefab;
+    public GameObject Ray;
     public float bulletForce = 20f;
     private bool started = false;
+ 
+    public float x=0.1f, y=2, z=0.1f;
+    public Vector3 newSize;
+    public static bool rayActive = false;
 
     //instancia el shooting en el awake haciendolo nulo, pero despues pasa a ser true sin entrar al else ya que lo hace despues
     private void Awake()
@@ -30,6 +37,7 @@ public class Controller_Shooting : MonoBehaviour
 
     private void Start()
     {
+       
         //vuelve a instanciar el shooting por el respawn 
         if (_ShootingPlayer == null)
             {
@@ -50,12 +58,16 @@ public class Controller_Shooting : MonoBehaviour
 
     private void Reset()
     {
+       
+        Ray.transform.localScale = new Vector3(0.3f, 0.2f,0.3f );
         ammo = Ammo.Bumeran;
         ammunition = 1;
     }
 
     void Update()
-    {//dispara cuando se presiona el click o el enter
+    {//entra a disparar y a check ammo cuando se hace click
+
+    
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
@@ -66,10 +78,11 @@ public class Controller_Shooting : MonoBehaviour
     private void CheckAmmo()
     {
         //cuando se acaba la municion de algun arma vuelve a tener el arma normal/pistola
-        if (ammunition <= 0)
-        {
-            ammo = Ammo.Normal;
-        }
+        
+            if (ammunition <= 0)
+            {
+              ammo = Ammo.Normal;
+            }
     }
 
     private void Shoot()
@@ -130,6 +143,20 @@ public class Controller_Shooting : MonoBehaviour
             //decrementa la municion
             ammunition--;
         }
+        if (ammo == Ammo.Bomb)
+        {
+            GameObject bullet = Instantiate(pBomb, firePoint.position, firePoint.rotation);
+            //instancia el rigid body
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            //se le añade una fuerza al rigidbody
+            rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            //se gasta la municion
+            Ray.transform.localScale = new Vector3(0.3f, 0.2f, 0.3f);
+        }
+        if (ammo == Ammo.ray)
+        {
+            Ray.transform.localScale = new Vector3(x, y, z);      
+        }
     }
 
     private void OnDisable()
@@ -143,5 +170,8 @@ public enum Ammo
     Normal,
     Shotgun,
     Cannon,
-    Bumeran
+    Bumeran,
+    Bomb,
+    ray
+
 }
