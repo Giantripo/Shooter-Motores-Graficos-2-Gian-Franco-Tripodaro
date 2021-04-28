@@ -489,6 +489,7 @@ MonoBehaviour:
     type: 3}
   Ray: {fileID: 1384433913}
   bulletForce: 20
+  pFrozen: {fileID: 3142499892055669193, guid: 84f524c2436cdbf41ac81c6af146cc33, type: 3}
   x: 0.2
   y: 2
   z: 0.2
@@ -1360,9 +1361,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 1.7202898
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000049670536, y: -0.13985513, z: -0.00000009934107}
 --- !u!23 &1384433916
 MeshRenderer:
   m_ObjectHideFlags: 0

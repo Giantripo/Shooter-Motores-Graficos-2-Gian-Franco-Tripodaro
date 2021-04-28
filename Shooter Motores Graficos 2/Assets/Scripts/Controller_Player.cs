@@ -60,6 +60,10 @@ public class Controller_Player : MonoBehaviour
             Controller_Shooting.ammo = Ammo.ray;
            
         }
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            Controller_Shooting.ammo = Ammo.Frozen;
+        }
 
     }
 

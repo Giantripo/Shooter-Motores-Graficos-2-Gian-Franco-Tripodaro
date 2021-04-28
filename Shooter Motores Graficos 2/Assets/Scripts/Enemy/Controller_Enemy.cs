@@ -79,6 +79,8 @@ public class Controller_Enemy : MonoBehaviour
         }
     }
 
+
+
         private void OnDestroy()
     {
         Instantiator.enemies.Remove(this);
