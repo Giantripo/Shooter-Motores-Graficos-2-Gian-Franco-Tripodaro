@@ -12,6 +12,7 @@ public class Controller_Player : MonoBehaviour
     private Vector3 startPos;
     private bool started = false;
     public static float speed = 5;
+    public static bool move = false;
     
     public TimeController timeController;
     
@@ -70,6 +71,15 @@ public class Controller_Player : MonoBehaviour
             Controller_Shooting.ammo = Ammo.star;
         }
 
+        if(movement.x !=0 || movement.y != 0)
+        {
+            move = true;
+        }
+        else
+        {
+            move = false;
+        }
+      
     }
 
     public virtual void FixedUpdate()
