@@ -16,6 +16,7 @@ public class Controller_Enemy : MonoBehaviour
     public float patrolDistance = 5;
     public float destinationTime = 4;
     public float enemySpeed;
+    
 
     void Start()
     {
@@ -69,8 +70,9 @@ public class Controller_Enemy : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("star"))
+        if (collision.gameObject.CompareTag("star2"))
         {
+            Destroy(collision.gameObject);
             Destroy(this.gameObject);
             Controller_Hud.points++;
         }
@@ -82,7 +84,12 @@ public class Controller_Enemy : MonoBehaviour
             Destroy(this.gameObject);
             Controller_Hud.points++;
         }
+        if (other.gameObject.CompareTag("star"))
+        {
+            Destroy(this.gameObject);
+        }
     }
+
 
 
 
