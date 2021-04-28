@@ -14,6 +14,13 @@ public class BombController : MonoBehaviour
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
             Destroy(_exp, 3);
         }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
+            Destroy(_exp, 3);
+            Destroy(this.gameObject);
+        }
+
     }
 
 }

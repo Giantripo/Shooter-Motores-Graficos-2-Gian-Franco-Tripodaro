@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class NewWeapon : MonoBehaviour
 {
+    
+
+
     //public float x, y, z;
     //public Vector3 newSize;
     //public static bool rayActive = false;
