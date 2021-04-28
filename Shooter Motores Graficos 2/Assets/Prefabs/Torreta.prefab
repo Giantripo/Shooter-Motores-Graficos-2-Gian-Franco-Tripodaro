@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4876674835450268853}
   - component: {fileID: 4872043738996625954}
   m_Layer: 9
-  m_Name: Frozen
+  m_Name: Torreta
   m_TagString: Frozen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3142499892055669193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7476355, y: 0.85037, z: 2.1536312}
-  m_LocalScale: {x: 0.73764, y: 0.13202281, z: 0.73764}
+  m_LocalPosition: {x: 0.7476355, y: 0.82597, z: 2.0539}
+  m_LocalScale: {x: 1.1324714, y: 0.20268975, z: 1.1324714}
   m_Children:
   - {fileID: 3658207650152624629}
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af84702f1969e934f9c6146a83328244, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 5557097354894309892}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.51, z: 0.61}
-  m_LocalScale: {x: 0.24366899, y: 0.25836948, z: 0.24366899}
+  m_LocalScale: {x: 0.24366899, y: 0.39553782, z: 0.38265777}
   m_Children: []
   m_Father: {fileID: 7056038059519102074}
   m_RootOrder: 0
@@ -189,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: df5d50081c177e6408e196024051db83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

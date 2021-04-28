@@ -60,7 +60,7 @@ public class Controller_Shooting : MonoBehaviour
 
     private void Reset()
     {
-       
+        
         Ray.transform.localScale = new Vector3(0.3f, 0.2f,0.3f );
         ammo = Ammo.Bumeran;
         ammunition = 1;

@@ -38,6 +38,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Reset()
     {
+      
         this.transform.position = startPos;
     }
 
