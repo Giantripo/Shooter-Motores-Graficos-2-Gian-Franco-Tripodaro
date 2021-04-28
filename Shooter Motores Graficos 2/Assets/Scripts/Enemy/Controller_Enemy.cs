@@ -88,6 +88,11 @@ public class Controller_Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (other.gameObject.CompareTag("bomb2"))
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
 

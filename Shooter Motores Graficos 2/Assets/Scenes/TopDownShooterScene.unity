@@ -490,6 +490,7 @@ MonoBehaviour:
   Ray: {fileID: 1384433913}
   bulletForce: 20
   pFrozen: {fileID: 3142499892055669193, guid: 84f524c2436cdbf41ac81c6af146cc33, type: 3}
+  pStar: {fileID: 3176531915549920063, guid: 121429e182b64a644a21d963f3a59889, type: 3}
   x: 0.2
   y: 2
   z: 0.2
