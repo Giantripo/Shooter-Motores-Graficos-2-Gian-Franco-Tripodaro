@@ -64,6 +64,10 @@ public class Controller_Player : MonoBehaviour
         {
             Controller_Shooting.ammo = Ammo.Frozen;
         }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            Controller_Shooting.ammo = Ammo.star;
+        }
 
     }
 

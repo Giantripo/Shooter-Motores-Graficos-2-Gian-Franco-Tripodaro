@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Controller_Enemy : MonoBehaviour
 {
     
-    public float expForce =50 , radius=20;
+    public float expForce =300 , radius=10000;
     public static int numPatroler;
     internal GameObject player;
     internal NavMeshAgent agent;
@@ -68,6 +68,11 @@ public class Controller_Enemy : MonoBehaviour
             }
 
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("star"))
+        {
+            Destroy(this.gameObject);
+            Controller_Hud.points++;
         }
     }
     private void OnTriggerEnter(Collider other)

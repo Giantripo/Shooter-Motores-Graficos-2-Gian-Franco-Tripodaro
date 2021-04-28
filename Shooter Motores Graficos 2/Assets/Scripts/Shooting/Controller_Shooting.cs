@@ -17,6 +17,7 @@ public class Controller_Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool started = false;
     public GameObject pFrozen;
+    public GameObject pStar;
  
     public float x=0.1f, y=2, z=0.1f;
     public Vector3 newSize;
@@ -165,8 +166,17 @@ public class Controller_Shooting : MonoBehaviour
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             //se le añade una fuerza al rigidbody
             //rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
-            
-            
+             
+        }
+        if (ammo == Ammo.star)
+        {
+            GameObject bullet = Instantiate(pStar, firePoint.position, firePoint.rotation);
+            //instancia el rigid body
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            //se le añade una fuerza al rigidbody
+            rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            //se gasta la municion
+           
         }
     }
 
@@ -184,6 +194,7 @@ public enum Ammo
     Bumeran,
     Bomb,
     ray,
-    Frozen
+    Frozen,
+    star
 
 }
