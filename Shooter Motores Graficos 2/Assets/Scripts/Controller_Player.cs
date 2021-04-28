@@ -90,7 +90,6 @@ public class Controller_Player : MonoBehaviour
 
     }
 
-     
     private void Movement()
     {
         //hace el calculo para que el personaje se mueva

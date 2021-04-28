@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1955324823}
   - component: {fileID: 1955324827}
   - component: {fileID: 1955324828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1687,7 +1687,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f464b5f4257d8d6428fdbd8c3729d9e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1761,7 +1761,6 @@ MonoBehaviour:
   motorForce: 0
   motorForce2: 0
   speed: 1
-  move: 0
 --- !u!1 &2009990330
 GameObject:
   m_ObjectHideFlags: 0
