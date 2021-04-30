@@ -12,13 +12,17 @@ public class Controller_Bumeran : MonoBehaviour
     private float travelDistance;
     private float colliderTimer = 0.07f;
     private bool going;
-
+    public Transform ObjectToFollow = null;
+   
+    public Transform Jugador;
 
     void Start()
     {
-        //estalbece going como true, que es la variable que se se encarga de la posicion inicial y el cambio de posicion
-        //tambien desactiva el colider hasta que lo necesita
-        parent = Controller_Player._Player;
+        ObjectToFollow = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    
+    //estalbece going como true, que es la variable que se se encarga de la posicion inicial y el cambio de posicion
+    //tambien desactiva el colider hasta que lo necesita
+    parent = Controller_Player._Player;
         rb = GetComponent<Rigidbody>();
         Restart._Restart.OnRestart += Reset;
         collider = GetComponent<CapsuleCollider>();
@@ -88,7 +92,9 @@ public class Controller_Bumeran : MonoBehaviour
     private void ReturnToPlayer()
     {
         collider.isTrigger = true;
-        rb.AddForce(direction * bumeranSpeed);
+        ObjectToFollow = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        transform.position = Vector3.MoveTowards(transform.position, ObjectToFollow.transform.position, 7 * Time.deltaTime);
     }
 
     private void OnDisable()

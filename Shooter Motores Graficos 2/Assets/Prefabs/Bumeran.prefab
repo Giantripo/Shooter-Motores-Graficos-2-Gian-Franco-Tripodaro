@@ -127,3 +127,6 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   maxDistance: 10
   bumeranSpeed: 10
+  ObjectToFollow: {fileID: 97539126410280683, guid: e3109bc8060ef3646a3bff3bff7844db,
+    type: 3}
+  Jugador: {fileID: 97539126410280683, guid: e3109bc8060ef3646a3bff3bff7844db, type: 3}
